@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/user-list.model';
-import { UserService } from '../services/user.service';
+import { emptyUser, User } from '../models/account-management/user.model';
+import { UserService } from '../services/account-management-services/user.service';
+
 
 @Component({
   selector: 'app-user-list',
@@ -10,9 +11,14 @@ import { UserService } from '../services/user.service';
 export class UserListComponent implements OnInit {
 
   users: User[] = [];
+  user :User = emptyUser();
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {
+    this.getUsers();
+  }
+
+  getUsers():void{
     this.userService.getUsers()
     .subscribe({
       next:(user) =>{
@@ -25,4 +31,16 @@ export class UserListComponent implements OnInit {
     })
   }
 
+  getUserDetails(id:number): void{
+    this.userService.getUser(id)
+    .subscribe({
+      next:(user) => {
+        console.log(user.result[0]);
+        this.user = user.result[0];
+      },
+      error: (response) => {
+        console.log(response);
+      }
+    })
+  }
 }

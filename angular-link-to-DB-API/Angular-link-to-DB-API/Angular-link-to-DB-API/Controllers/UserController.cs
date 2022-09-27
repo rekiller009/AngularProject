@@ -49,6 +49,26 @@ namespace Angular_link_to_DB_API.Controllers
             }
         }
 
+        [Route("GetUserById")]
+        [HttpGet]
+        public async Task<IActionResult> GetUserById(Guid id)
+        {
+            _logger.LogDebug($"{nameof(UserController)}.{nameof(GetUserById)}");
+
+            //var test = _utils.GetUsers();
+            var test = _CadetDB.Users.Where(x => x.Id == id).ToList();
+            //var test = _CadetDB.Users.FromSql($"EXECUTE dbo.prGetUsers").ToList();
+            if (test != null)
+            {
+                _logger.LogDebug($"{nameof(UserController)}.{nameof(GetUserById)}: result = {test}");
+                return Ok(new { status = Constants.Status.OK.ToString(), message = "Get users", result = test });
+            }
+            else
+            {
+                return Ok(new { status = Constants.Status.FAIL.ToString(), message = "No users" });
+            }
+        }
+
         [Route("GetAuditTrails")]
         [HttpGet]
         public async Task<IActionResult> GetAuditTrails()
@@ -56,8 +76,8 @@ namespace Angular_link_to_DB_API.Controllers
             _logger.LogDebug($"{nameof(UserController)}.{nameof(GetAuditTrails)}");
 
             //var test = _utils.GetAuditTrails(); // using Dapper
-            //var test = _CadetAuditTrailDB.AuditTrails.Where(x => x.Action == "Delete").Take(2000).ToList(); // using 
-            var test = _CadetAuditTrailDB.AuditTrails.FromSql($"EXECUTE dbo.prGetAuditTrails").ToList();
+            //var test = _CadetAuditTrailDB.AuditTrails.Where(x => x.Action == "Delete").Take(2000).ToList(); // using Entity Framework Core
+            var test = _CadetAuditTrailDB.AuditTrails.FromSql($"EXECUTE dbo.prGetAuditTrails").ToList(); // using Entity Framework Core + Stored Procedure
             if (test != null)
             {
                 _logger.LogDebug($"{nameof(UserController)}.{nameof(GetAuditTrails)}: result = {test}");
