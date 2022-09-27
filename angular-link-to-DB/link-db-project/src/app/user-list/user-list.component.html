@@ -1,0 +1,26 @@
+<div class="container my-5">
+    <h1 class="mb-3">Employees</h1>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end"><i class="bi bi-plus-circle-fill btn" style="font-size: 30px;"></i></div>
+    <table class="table" *ngIf="users && users.length > 0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Join Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.Id}}</td>
+                <td>{{user.UserName}}</td>
+                <td>{{user.EmailAddress}}</td>
+                <td>{{user.CreatedDate}}</td>
+                <td><a class="bi bi-pencil-square btn btn-primary"></a>&nbsp;<a class="bi bi-trash btn btn-danger"></a></td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!users || users.length <= 0">No users found</p>
+
+</div>
