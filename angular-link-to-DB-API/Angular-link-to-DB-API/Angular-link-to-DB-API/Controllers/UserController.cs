@@ -3,6 +3,7 @@ using Angular_link_to_DB_API.Data;
 using Angular_link_to_DB_API.Db;
 using Angular_link_to_DB_API.Helpers;
 using Angular_link_to_DB_API.Models;
+using Angular_link_to_DB_API.Request.User;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -69,6 +70,39 @@ namespace Angular_link_to_DB_API.Controllers
             }
         }
 
+        [Route("EditUser")]
+        [HttpPost]
+        public async Task<IActionResult> EditUser([FromBody] EditUserRequest request)
+        {
+            _logger.LogDebug($"{nameof(UserController)}.{nameof(GetUserById)}");
+            string adminId = Constants.currentAdminId;
+            DateTime startDay = DateTime.Now;
+            DateTime endDay = startDay.AddDays(100);
+            string remarks = "";
+            string groupId = "98567063-6A0B-4A22-98DC-511AF746F5C6"; // Executive group
+            string status = "257B502A-EEA5-48D5-86B3-EDA5F630C9B8"; // Active
+            string department = "0C6F9713-43C3-4A6D-A09A-ED9A1D72FD97"; // IAD
+            string userId = request.id;
+            string emailAddress = request.email;
+            string userName = request.name;
+
+            //var test = _utils.GetUsers();
+            //var test = _CadetDB.Users.Where(x => x.Id == id).ToList();
+            var test = _CadetDB.Users.
+                FromSql($@"EXECUTE dbo.prEditUser '{userId}','{userName}',
+                        '{department}', '{emailAddress}','{status}','{startDay}',
+                        '{endDay}','{remarks}','{groupId}','{adminId}'")
+                .ToList();
+            if (test != null)
+            {
+                _logger.LogDebug($"{nameof(UserController)}.{nameof(GetUserById)}: result = {test}");
+                return Ok(new { status = Constants.Status.OK.ToString(), message = "Get users", result = test });
+            }
+            else
+            {
+                return Ok(new { status = Constants.Status.FAIL.ToString(), message = "No users" });
+            }
+        }
         [Route("GetAuditTrails")]
         [HttpGet]
         public async Task<IActionResult> GetAuditTrails()

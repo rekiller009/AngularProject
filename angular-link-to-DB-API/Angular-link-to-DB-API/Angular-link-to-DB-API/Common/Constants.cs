@@ -24,7 +24,7 @@
         public const string DateFormat = "yyyy-MM-dd";
         public const string DateTimeFormat = "yyyy-MM-dd HH:mm:ss.fff";
         public const string SingaporeCountryCodeId = "6B1ECD5D-7184-4CC5-9A30-77D53204CB3E";
-
+        public const string currentAdminId = "B706422F-4A73-406B-B6BA-4A318370944F";
         //user
         public const string StoredProcedureGetUsers = "prGetUsers";
 

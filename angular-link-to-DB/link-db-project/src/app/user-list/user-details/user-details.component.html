@@ -2,22 +2,42 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Modal title</h5>
+          <h5 class="modal-title">User Details</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <p>Modal body text goes here.</p>
-          <p>user-details works!</p>
-          <table>
-            <tr>
-                <td>User Name</td>
-                <td>{{currentUser.userName}}</td>
-            </tr>
-          </table>
+        <div class="modal-body" *ngIf="currentUser.deletedDate != null else showDeletedUserInfo">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="col">User Id</th>
+                        <td>{{currentUser.id}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">User Name</th>
+                        <td>{{currentUser.userName}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Email Address</th>
+                        <td>{{currentUser.emailAddress}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Created Date</th>
+                        <td>{{currentUser.createdDate}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="col">Deleted Date</th>
+                        <td>{{currentUser.deletedDate}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+        <ng-template #showDeletedUserInfo>
+            <div class="modal-body">
+                User is deleted
+            </div>
+        </ng-template>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
