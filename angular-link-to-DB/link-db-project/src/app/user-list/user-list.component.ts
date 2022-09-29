@@ -14,8 +14,8 @@ export class UserListComponent implements OnInit {
   user :User = emptyUser();
   constructor(private userService:UserService) { }
 
-  ngOnInit(): void {
-    this.getUsers();
+  async ngOnInit(): Promise<void> {
+    await this.getUsers();
   }
 
   getUsers():void{
@@ -31,7 +31,7 @@ export class UserListComponent implements OnInit {
     })
   }
 
-  getUserDetails(id:number): void{
+  getUserDetails(id:string): void{
     this.userService.getUser(id)
     .subscribe({
       next:(user) => {

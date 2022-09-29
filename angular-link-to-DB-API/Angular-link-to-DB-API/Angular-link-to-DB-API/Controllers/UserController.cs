@@ -83,15 +83,15 @@ namespace Angular_link_to_DB_API.Controllers
             string status = "257B502A-EEA5-48D5-86B3-EDA5F630C9B8"; // Active
             string department = "0C6F9713-43C3-4A6D-A09A-ED9A1D72FD97"; // IAD
             string userId = request.id;
-            string emailAddress = request.email;
-            string userName = request.name;
+            string emailAddress = request.emailAddress;
+            string userName = request.userName;
 
             //var test = _utils.GetUsers();
             //var test = _CadetDB.Users.Where(x => x.Id == id).ToList();
             var test = _CadetDB.Users.
-                FromSql($@"EXECUTE dbo.prEditUser '{userId}','{userName}',
-                        '{department}', '{emailAddress}','{status}','{startDay}',
-                        '{endDay}','{remarks}','{groupId}','{adminId}'")
+                FromSql($@"EXECUTE dbo.prEditUser {Guid.Parse(userId)},{userName},
+                        {Guid.Parse(department)}, {emailAddress},{Guid.Parse(status)},{startDay},
+                        {endDay},{remarks},{Guid.Parse(groupId)},{Guid.Parse(adminId)}")
                 .ToList();
             if (test != null)
             {
@@ -103,6 +103,7 @@ namespace Angular_link_to_DB_API.Controllers
                 return Ok(new { status = Constants.Status.FAIL.ToString(), message = "No users" });
             }
         }
+
         [Route("GetAuditTrails")]
         [HttpGet]
         public async Task<IActionResult> GetAuditTrails()

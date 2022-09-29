@@ -24,7 +24,9 @@
                      (click)="getUserDetails(user.id)"
                      data-bs-toggle="modal" data-bs-target="#user-details-modal">
                      User Details</a>
-                     <a class="bi bi-pencil-square btn btn-primary">
+                     <a class="bi bi-pencil-square btn btn-primary"
+                     (click)="getUserDetails(user.id)"
+                     data-bs-toggle="modal" data-bs-target="#user-edit-details-modal" >
                         Edit User
                     </a>
                     &nbsp;
@@ -37,6 +39,7 @@
         </tbody>
     </table>
     <app-user-details [user]="user"></app-user-details>
+    <app-user-edit-details [user]="user"></app-user-edit-details>
     <p *ngIf="!users || users.length <= 0">No users found</p>
 
 </div>

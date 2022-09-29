@@ -1,20 +1,32 @@
 export interface User {
-    id:number;
+    id:string;
     userName: string;
     emailAddress: string;
     createdDate: string;
     deletedDate: string;
 }
 
+export interface EditUser{
+    id:string,
+    userName: string,
+    emailAddress: string
+}
+
 export const emptyUser = (): User => ({
-    id:0,
+    id:'',
     userName: '',
     emailAddress: '',
     createdDate: '',
     deletedDate: ''
 });
 
-export const setUser = (id:number,userName:string,
+export const emptyEditUser = (): EditUser => ({
+    id:'',
+    userName: '',
+    emailAddress: ''
+});
+
+export const setUser = (id:string,userName:string,
                         emailAddress:string,
                         createdDate:string,
                         deletedDate:string
