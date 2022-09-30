@@ -12,6 +12,15 @@ export interface EditUser{
     emailAddress: string
 }
 
+export interface DeleteUser{
+    id:string
+}
+
+export interface AddUser{
+    userName: string,
+    emailAddress: string
+}
+
 export const emptyUser = (): User => ({
     id:'',
     userName: '',
@@ -24,6 +33,15 @@ export const emptyEditUser = (): EditUser => ({
     id:'',
     userName: '',
     emailAddress: ''
+});
+
+export const emptyDeleteUser = (): DeleteUser => ({
+    id:''
+});
+
+export const emptyAddUser = (): AddUser => ({
+    userName: '',
+    emailAddress:''
 });
 
 export const setUser = (id:string,userName:string,

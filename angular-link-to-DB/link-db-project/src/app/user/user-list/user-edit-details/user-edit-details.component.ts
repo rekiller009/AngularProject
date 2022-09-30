@@ -48,7 +48,7 @@ export class UserEditDetailsComponent implements OnInit {
       next:(user) => {
         console.log(user.result[0]);
         this.user = user.result[0];
-        
+        this.notifyForChange(null);
       },
       error: (response) => {
         console.log(response);
@@ -56,6 +56,9 @@ export class UserEditDetailsComponent implements OnInit {
     })
   }
 
+  notifyForChange(message:null){
+    this.userService.refreshUserList(message);
+  }
 }
 
 
