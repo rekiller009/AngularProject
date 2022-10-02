@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { emptyUser, User } from '../models/account-management/user.model';
-import { UserService } from '../services/account-management-services/user.service';
-
+import { emptyUser, User } from '../../models/account-management/user.model';
+import { UserService } from '../../services/account-management-services/user.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-user-list',
@@ -17,6 +17,14 @@ export class UserListComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     await this.getUsers();
   }
+
+  ngOnDestroy(){
+    this.notifierSubscription.unsubscribe();
+  }
+  
+  notifierSubscription: Subscription = this.userService.SubjectNotifier.subscribe(notified =>{
+     this.getUsers();
+  });
 
   getUsers():void{
     this.userService.getUsers()

@@ -1,6 +1,9 @@
 <div class="container my-5">
-    <h1 class="mb-3">Employees</h1>
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end"><i class="bi bi-plus-circle-fill btn" style="font-size: 30px;"></i></div>
+    
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <i class="bi bi-plus-circle-fill btn" style="font-size: 30px;" data-bs-toggle="modal" data-bs-target="#user-add-modal">
+        </i>
+    </div>
     <table class="table" *ngIf="users && users.length > 0">
         <thead>
             <tr>
@@ -8,7 +11,6 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Join Date</th>
-                <th>Deleted Date</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -18,19 +20,21 @@
                 <td>{{user.userName}}</td>
                 <td>{{user.emailAddress}}</td>
                 <td>{{user.createdDate}}</td>
-                <td>{{user.deletedDate}}</td>
-                <td><a
-                     class="bi bi-person btn btn-success"
+                <td><a class="bi bi-person btn btn-success"
                      (click)="getUserDetails(user.id)"
                      data-bs-toggle="modal" data-bs-target="#user-details-modal">
-                     User Details</a>
+                        User Details
+                    </a>
+                    &nbsp;
                      <a class="bi bi-pencil-square btn btn-primary"
                      (click)="getUserDetails(user.id)"
                      data-bs-toggle="modal" data-bs-target="#user-edit-details-modal" >
                         Edit User
                     </a>
                     &nbsp;
-                    <a class="bi bi-trash btn btn-danger">
+                    <a class="bi bi-trash btn btn-danger"
+                    (click)="getUserDetails(user.id)"
+                    data-bs-toggle="modal" data-bs-target="#user-delete-modal">
                         Delete User
                     </a>
                 </td>
@@ -40,6 +44,8 @@
     </table>
     <app-user-details [user]="user"></app-user-details>
     <app-user-edit-details [user]="user"></app-user-edit-details>
+    <app-user-delete [user]="user"></app-user-delete>
+    <app-user-add></app-user-add>
     <p *ngIf="!users || users.length <= 0">No users found</p>
 
 </div>
