@@ -1,0 +1,24 @@
+Create the Link to SQL DB with Entity Framework 
+================================================
+1. open package solution
+2. Scaffold-DbContext 'Server="LocalDb name";Database="database name";Initial Catalog=logicaldoc;Persist Security Info=False;User ID=username;Password=password' Microsoft.EntityFrameworkCore.SqlServer -Tables "list of related table name" -Context CadetDbContext -OutputDir Db
+
+Persist Security Info=False;User ID=username;Password=password;
+
+3. run the script in step 2
+4. builder.Services.AddDbContext<ECMDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ECMConnection")));
+5. paste the script in Program.cs in step 4
+
+
+If I want to adjust the table or add new table
+===============================================
+1. delete the current framework in Data Folder
+2. Run the code "Scaffold-DbContext 'Server="LocalDb name";Database="database name";Initial Catalog=logicaldoc;Persist Security Info=False;User ID=username;Password=password' Microsoft.EntityFrameworkCore.SqlServer -Tables "list of related table name" -Context CadetDbContext -OutputDir Db
+
+Persist Security Info=False;User ID=username;Password=password;"
+
+with new table
+
+OR
+
+1. Find the current framework in Data Folder and remap it by yourself.
