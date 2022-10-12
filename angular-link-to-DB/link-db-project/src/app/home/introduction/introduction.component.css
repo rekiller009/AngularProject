@@ -1,0 +1,14 @@
+.introduction {
+    padding:1.5rem;
+    margin-left:0;
+    margin-right:0;
+    border-top-left-radius: 0.25rem;
+}
+
+.hire-btn{
+    width: 100px;
+}
+
+.download-cv-btn {
+    width: 100px;
+}
