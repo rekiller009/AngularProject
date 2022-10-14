@@ -1,10 +1,19 @@
 <div class="container-fluid min-vh-100 border">
-    <p>experience works!</p>
     <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
             <div class="row h-100  min-vh-100">
-                <div class="col-12">
-                    <div class="p-3 h-100 border bg-light">2</div>
+                <div class="col-12 p-3 h-100">
+                    <div class="row" >
+                        <div class="col" *ngFor="let number of numbers" >
+                            <div class="card m-3" style="width: 18rem;">
+                                <div class="card-body">
+                                  <h5 class="card-title">Card title</h5>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

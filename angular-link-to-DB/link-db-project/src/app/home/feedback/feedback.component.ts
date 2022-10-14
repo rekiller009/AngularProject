@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedbackComponent implements OnInit {
 
-  constructor() { }
+  numbers:number[];
+  constructor() {
+    this.numbers = Array(3).fill(0).map((x,i) => i);
+  }
 
   ngOnInit(): void {
   }

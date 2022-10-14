@@ -6,9 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./experience.component.css']
 })
 export class ExperienceComponent implements OnInit {
-
-  constructor() { }
-
+  numbers:number[];
+  constructor() {
+    this.numbers = Array(6).fill(0).map((x,i) => i);
+  }
   ngOnInit(): void {
   }
 

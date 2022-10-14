@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesOfferComponent implements OnInit {
 
-  constructor() { }
+  numbers:number[];
+  constructor() {
+    this.numbers = Array(5).fill(0).map((x,i) => i);
+  }
 
   ngOnInit(): void {
   }
