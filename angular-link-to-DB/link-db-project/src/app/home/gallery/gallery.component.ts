@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
-
-  constructor() { }
+  numbers:number[];
+  constructor() {
+    this.numbers = Array(5).fill(0).map((x,i) => i);
+  }
 
   ngOnInit(): void {
   }
