@@ -22,14 +22,16 @@ namespace Angular_link_to_DB_API.Controllers
         private readonly Utils _utils;
         private readonly CadetDbContext _CadetDB;
         private readonly CadetAuditTrailDbContext _CadetAuditTrailDB;
+        private readonly TestingContext _testingContext;
 
-        public UserController(ILogger<UserController> logger, IConfiguration configuration,Utils utils, CadetDbContext cadetDb, CadetAuditTrailDbContext cadetAuditTrailDB)
+        public UserController(ILogger<UserController> logger, IConfiguration configuration,Utils utils, CadetDbContext cadetDb, CadetAuditTrailDbContext cadetAuditTrailDB, TestingContext testingContext)
         {
             _logger = logger;
             _configuration = configuration;
             _utils = utils;
             _CadetDB = cadetDb;
             _CadetAuditTrailDB = cadetAuditTrailDB;
+            _testingContext = testingContext;
             //_dbContent = dbContent;
         }
 
@@ -163,25 +165,46 @@ namespace Angular_link_to_DB_API.Controllers
             }
         }
 
+        //[Route("GetAuditTrails")]
+        //[HttpGet]
+        //public async Task<IActionResult> GetAuditTrails()
+        //{
+        //    _logger.LogDebug($"{nameof(UserController)}.{nameof(GetAuditTrails)}");
 
+        //    //var test = _utils.GetAuditTrails(); // using Dapper
+        //    //var test = _CadetAuditTrailDB.AuditTrails.Where(x => x.Action == "Delete").Take(2000).ToList(); // using Entity Framework Core
+        //    var test = _CadetAuditTrailDB.AuditTrails.FromSql($"EXECUTE dbo.prGetAuditTrails").ToList(); // using Entity Framework Core + Stored Procedure
+        //    if (test != null)
+        //    {
+        //        _logger.LogDebug($"{nameof(UserController)}.{nameof(GetAuditTrails)}: result = {test}");
+        //        return Ok(new { status = Constants.Status.OK.ToString(), message = "Get audit trails", result = test });
+        //    }
+        //    else
+        //    {
+        //        return Ok(new { status = Constants.Status.FAIL.ToString(), message = "No users" });
+        //    }
+        //}
 
-        [Route("GetAuditTrails")]
+        [Route("GetTransactions")]
         [HttpGet]
-        public async Task<IActionResult> GetAuditTrails()
+        public async Task<IActionResult> GetTransaction()
         {
-            _logger.LogDebug($"{nameof(UserController)}.{nameof(GetAuditTrails)}");
+            _logger.LogDebug($"{nameof(UserController)}.{nameof(GetTransaction)}");
 
             //var test = _utils.GetAuditTrails(); // using Dapper
             //var test = _CadetAuditTrailDB.AuditTrails.Where(x => x.Action == "Delete").Take(2000).ToList(); // using Entity Framework Core
-            var test = _CadetAuditTrailDB.AuditTrails.FromSql($"EXECUTE dbo.prGetAuditTrails").ToList(); // using Entity Framework Core + Stored Procedure
-            if (test != null)
+            //var invoice = _CadetAuditTrailDB.AuditTrails.FromSql($"EXECUTE dbo.prGetAuditTrails").ToList(); // using Entity Framework Core + Stored Procedure
+            var invoice = _testingContext.TmpTransactions.FromSql($"EXECUTE dbo.prGetTransaction {"INVOICE"}").ToList();
+            var receipt = _testingContext.TmpTransactions.FromSql($"EXECUTE dbo.prGetTransaction {"RECEIPT"}").ToList();
+
+            if (invoice != null)
             {
-                _logger.LogDebug($"{nameof(UserController)}.{nameof(GetAuditTrails)}: result = {test}");
-                return Ok(new { status = Constants.Status.OK.ToString(), message = "Get audit trails", result = test });
+                _logger.LogDebug($"{nameof(UserController)}.{nameof(GetTransaction)}: result = {invoice}");
+                return Ok(new { status = Constants.Status.OK.ToString(), message = "Get Transactions", result = invoice });
             }
             else
             {
-                return Ok(new { status = Constants.Status.FAIL.ToString(), message = "No users" });
+                return Ok(new { status = Constants.Status.FAIL.ToString(), message = "No transaction" });
             }
         }
         //[HttpGet]

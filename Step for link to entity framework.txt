@@ -22,3 +22,7 @@ with new table
 OR
 
 1. Find the current framework in Data Folder and remap it by yourself.
+
+Scaffold-DbContext 'Server="CHANGCHUAN-ASUS";Database="Testing";Initial Catalog=logicaldoc;TrustServerCertificate=True;Persist Security Info=False;User ID=CHANGCHUAN-ASUS\Chuan;' Microsoft.EntityFrameworkCore.SqlServer -Tables tmpTransaction -Context TransactionDbContext -OutputDir Db
+
+Scaffold-DbContext "Server=CHANGCHUAN-ASUS;Database=Testing;Trusted_Connection=True;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models

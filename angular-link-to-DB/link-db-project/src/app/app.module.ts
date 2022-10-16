@@ -17,6 +17,7 @@ import { ServicesOfferComponent } from './home/services-offer/services-offer.com
 import { GalleryComponent } from './home/gallery/gallery.component';
 import { FeedbackComponent } from './home/feedback/feedback.component';
 import { FooterComponent } from './home/footer/footer.component';
+import { TransactionsComponent } from './transactions/transactions.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FooterComponent } from './home/footer/footer.component';
     ServicesOfferComponent,
     GalleryComponent,
     FeedbackComponent,
-    FooterComponent
+    FooterComponent,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule,

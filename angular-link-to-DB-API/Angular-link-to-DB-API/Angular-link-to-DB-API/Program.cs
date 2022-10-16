@@ -14,6 +14,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddDbContext<CadetDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ECMConnection")));
 builder.Services.AddDbContext<CadetAuditTrailDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ECMConnection")));
+builder.Services.AddDbContext<TestingContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ECMConnection")));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
