@@ -40,7 +40,7 @@ namespace Angular_link_to_DB_API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetTransaction()
         {
-            _logger.LogDebug($"{nameof(UserController)}.{nameof(GetTransaction)}");
+            _logger.LogDebug($"{nameof(TransactionController)}.{nameof(GetTransaction)}");
 
             //var test = _utils.GetAuditTrails(); // using Dapper
             //var test = _CadetAuditTrailDB.AuditTrails.Where(x => x.Action == "Delete").Take(2000).ToList(); // using Entity Framework Core
@@ -64,17 +64,46 @@ namespace Angular_link_to_DB_API.Controllers
 
                     transactions.Add(resultTransaction);
                 }
+                else if(i > 0)
+                {
+                    var tmp = receipt.Where(x => x.Invoice == invoice[i].RefNo).ToList();
 
+                    if (tmp.Count > 0)
+                    {
+                        for (int j = 0; j < tmp.Count; j++)
+                        {
+                            ResultTransaction resultTransactionReceipt = new ResultTransaction()
+                            {
+                                No = transactions[i - 1].No + j + 1,
+                                RefNo = tmp[j].RefNo,
+                                Dateissued = tmp[j].Dateissued,
+                                NetTotal = -tmp[j].Amt,
+                                BalanceDue = -tmp[j].Amt + invoice[i - 1].Amt
+                            };
 
-                
-                
+                            transactions.Add(resultTransactionReceipt);
+                        }
+                    }
+                    else
+                    {
+                        ResultTransaction resultTransaction = new ResultTransaction()
+                        {
+                            No = transactions[i - 1].No + 1,
+                            RefNo = invoice[i].RefNo,
+                            Dateissued = invoice[i].Dateissued,
+                            NetTotal = invoice[i].Amt,
+                            BalanceDue = invoice[i].Amt + invoice[i - 1].Amt
+                        };
 
+                        transactions.Add(resultTransaction);
+                    }
+                }
             }
 
-            if (invoice != null)
+            if (transactions != null)
             {
-                _logger.LogDebug($"{nameof(UserController)}.{nameof(GetTransaction)}: result = {invoice}");
-                return Ok(new { status = Constants.Status.OK.ToString(), message = "Get Transactions", result = invoice });
+                _logger.LogDebug($"{nameof(TransactionController)}.{nameof(GetTransaction)}: result = {transactions}");
+                return Ok(new { status = Constants.Status.OK.ToString(), message = "Get Transactions", result = transactions });
             }
             else
             {
