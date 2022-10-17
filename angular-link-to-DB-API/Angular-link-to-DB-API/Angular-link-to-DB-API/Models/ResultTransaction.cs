@@ -6,7 +6,7 @@
 
         public string? RefNo { get; set; }
 
-        public DateTime? Dateissued { get; set; }
+        public string? Dateissued { get; set; }
 
         public decimal? NetTotal { get; set; }
 
