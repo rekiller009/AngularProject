@@ -1,10 +1,7 @@
-<p>transactions works!</p>
+
 
 <div class="container my-5">
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <i class="bi bi-plus-circle-fill btn" style="font-size: 30px;" data-bs-toggle="modal" data-bs-target="#user-add-modal">
-        </i>
-    </div>
+    <p>transactions works!</p>
     <table class="table" *ngIf="transactions && transactions.length > 0">
         <thead>
             <tr>
@@ -18,11 +15,10 @@
         <tbody>
             <tr *ngFor="let transaction of transactions">
                 <td>{{transaction.no}}</td>
-                <td>{{transaction.dateIssued}}</td>
+                <td>{{transaction.dateissued}}</td>
                 <td>{{transaction.refNo}}</td>
                 <td>{{transaction.netTotal}}</td>
                 <td>{{transaction.balanceDue}}</td>
-                
             </tr>
         </tbody>
     </table>

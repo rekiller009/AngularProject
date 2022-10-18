@@ -1,7 +1,7 @@
 export interface Transaction {
     no:number,
     refNo:string,
-    dateIssued: any,
+    dateissued: any,
     netTotal:number,
     balanceDue:number
 }
@@ -9,7 +9,7 @@ export interface Transaction {
 export const emptyTransaction = (): Transaction => ({
     no:0,
     refNo:"",
-    dateIssued: "",
+    dateissued: "",
     netTotal:0,
     balanceDue:0
 });
