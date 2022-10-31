@@ -15,7 +15,6 @@ import { IntroductionComponent } from './home/introduction/introduction.componen
 import { ExperienceComponent } from './home/experience/experience.component';
 import { ServicesOfferComponent } from './home/services-offer/services-offer.component';
 import { GalleryComponent } from './home/gallery/gallery.component';
-import { FeedbackComponent } from './home/feedback/feedback.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 
@@ -33,7 +32,6 @@ import { TransactionsComponent } from './transactions/transactions.component';
     ExperienceComponent,
     ServicesOfferComponent,
     GalleryComponent,
-    FeedbackComponent,
     FooterComponent,
     TransactionsComponent
   ],

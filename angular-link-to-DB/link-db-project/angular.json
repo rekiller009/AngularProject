@@ -23,9 +23,21 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "assets/plugins/font-awesome/css/font-awesome.css",
+              "http://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css",
+              "http://caseyscarborough.github.io/github-activity/github-activity-0.1.0.min.css",
+              "assets/plugins/bootstrap/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "assets/plugins/jquery-1.11.1.min.js",
+              "assets/plugins/jquery-migrate-1.2.1.min.js",
+              "assets/plugins/bootstrap/js/bootstrap.min.js",
+              "assets/plugins/jquery-rss/dist/jquery.rss.min.js",
+              "http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js",
+              "http://caseyscarborough.github.io/github-activity/github-activity-0.1.0.min.js",
+              "assets/js/main.js"
+            ]
           },
           "configurations": {
             "production": {
