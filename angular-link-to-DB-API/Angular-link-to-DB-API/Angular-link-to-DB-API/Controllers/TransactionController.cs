@@ -10,6 +10,7 @@ using static Angular_link_to_DB_API.Common.Constants;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
 using System.Transactions;
+using Azure;
 
 namespace Angular_link_to_DB_API.Controllers
 {
@@ -138,6 +139,57 @@ namespace Angular_link_to_DB_API.Controllers
             }
         }
 
+        
+        [Route("RegisterEmployee")]
+        [HttpPost]
+        public async Task<IActionResult> RegisterEmployee(string name,string loginId)
+        {
+            var response = _testingContext.TmpTransactions.FromSql($"EXECUTE prRegisterEmployee {name},{loginId}");
+
+            if(response != null)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return BadRequest("The action failed");
+            }
+        }
+
+
+        [Route("DeleteEmployee")]
+        [HttpDelete]
+        public async Task<IActionResult> DeleteEmployee(int id)
+        {
+            var response = _testingContext.TmpTransactions.FromSql($"EXECUTE prDeleteEmployee {id}");
+
+            if(response != null)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return BadRequest("The action failed");
+            }
+        }
+
+        [Route("EnquireEmployee")]
+        [HttpGet]
+        public async Task<IActionResult> EnquireEmployee(int id)
+        {
+            var response = _testingContext.TmpTransactions.FromSql($"EXECUTE prEnquireEmployee {id}");
+
+            if (response != null)
+            {
+                return Ok(response);
+            }
+            else
+            {
+                return BadRequest("The action failed");
+            }
+        }
+
+        
         public static string FormatDate(string date)
         {
             var split = date.Split('/');

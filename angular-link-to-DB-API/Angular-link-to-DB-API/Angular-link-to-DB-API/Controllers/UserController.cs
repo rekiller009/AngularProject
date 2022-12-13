@@ -147,6 +147,7 @@ namespace Angular_link_to_DB_API.Controllers
         [HttpPut]
         public async Task<IActionResult> DeleteUser([FromBody] DeleteUserRequest request)
         {
+
             _logger.LogDebug($"{nameof(UserController)}.{nameof(DeleteUser)}");
             string adminId = Constants.currentAdminId;
 
