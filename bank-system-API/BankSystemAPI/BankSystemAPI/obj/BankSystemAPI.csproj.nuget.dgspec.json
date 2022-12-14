@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\changchuan_cham\\Desktop\\Angular\\Angular Testing 5 - Linked to Database\\AngularProject\\angular-link-to-DB-API\\Angular-link-to-DB-API\\Angular-link-to-DB-API\\Angular-link-to-DB-API.csproj": {}
+    "C:\\Users\\changchuan_cham\\Desktop\\Angular\\Angular Testing 5 - Linked to Database\\AngularProject\\bank-system-API\\BankSystemAPI\\BankSystemAPI\\BankSystemAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\changchuan_cham\\Desktop\\Angular\\Angular Testing 5 - Linked to Database\\AngularProject\\angular-link-to-DB-API\\Angular-link-to-DB-API\\Angular-link-to-DB-API\\Angular-link-to-DB-API.csproj": {
+    "C:\\Users\\changchuan_cham\\Desktop\\Angular\\Angular Testing 5 - Linked to Database\\AngularProject\\bank-system-API\\BankSystemAPI\\BankSystemAPI\\BankSystemAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\changchuan_cham\\Desktop\\Angular\\Angular Testing 5 - Linked to Database\\AngularProject\\angular-link-to-DB-API\\Angular-link-to-DB-API\\Angular-link-to-DB-API\\Angular-link-to-DB-API.csproj",
-        "projectName": "Angular-link-to-DB-API",
-        "projectPath": "C:\\Users\\changchuan_cham\\Desktop\\Angular\\Angular Testing 5 - Linked to Database\\AngularProject\\angular-link-to-DB-API\\Angular-link-to-DB-API\\Angular-link-to-DB-API\\Angular-link-to-DB-API.csproj",
+        "projectUniqueName": "C:\\Users\\changchuan_cham\\Desktop\\Angular\\Angular Testing 5 - Linked to Database\\AngularProject\\bank-system-API\\BankSystemAPI\\BankSystemAPI\\BankSystemAPI.csproj",
+        "projectName": "BankSystemAPI",
+        "projectPath": "C:\\Users\\changchuan_cham\\Desktop\\Angular\\Angular Testing 5 - Linked to Database\\AngularProject\\bank-system-API\\BankSystemAPI\\BankSystemAPI\\BankSystemAPI.csproj",
         "packagesPath": "C:\\Users\\changchuan_cham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\changchuan_cham\\Desktop\\Angular\\Angular Testing 5 - Linked to Database\\AngularProject\\angular-link-to-DB-API\\Angular-link-to-DB-API\\Angular-link-to-DB-API\\obj\\",
+        "outputPath": "C:\\Users\\changchuan_cham\\Desktop\\Angular\\Angular Testing 5 - Linked to Database\\AngularProject\\bank-system-API\\BankSystemAPI\\BankSystemAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,31 +45,23 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Dapper": {
-              "target": "Package",
-              "version": "[2.0.123, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.0-rc.2.22472.11, )"
+              "version": "[7.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.0-rc.2.22472.11, )"
+              "version": "[7.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.0-rc.2.22472.11, )"
-            },
-            "NLog": {
-              "target": "Package",
-              "version": "[5.0.4, )"
+              "version": "[7.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.2.3, )"
             }
           },
           "imports": [
