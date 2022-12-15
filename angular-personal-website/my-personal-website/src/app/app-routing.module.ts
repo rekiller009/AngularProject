@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SelfIntroductionComponent } from './self-introduction/self-introduction.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: SelfIntroductionComponent
+  },
+  {
+    path: 'about-me',
+    component: SelfIntroductionComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
