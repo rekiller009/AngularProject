@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SelfIntroductionComponent } from './self-introduction/self-introduction.component';
+import { SelfIntroductionComponent } from './about/about.component';
 
 const routes: Routes = [
   {
