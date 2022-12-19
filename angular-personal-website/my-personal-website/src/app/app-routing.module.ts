@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SelfIntroductionComponent } from './about/about.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: SelfIntroductionComponent
+    component: AboutComponent
   },
   {
     path: 'about-me',
-    component: SelfIntroductionComponent
+    component: AboutComponent
   }
 ];
 
