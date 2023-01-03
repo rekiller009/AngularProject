@@ -260,3 +260,9 @@ C:\Users\Chuan\Documents\GitHub\AngularProject\angular-link-to-DB-API\Angular-li
 C:\Users\Chuan\Documents\GitHub\AngularProject\angular-link-to-DB-API\Angular-link-to-DB-API\Angular-link-to-DB-API\obj\Debug\net6.0\Angular-link-to-DB-API.pdb
 C:\Users\Chuan\Documents\GitHub\AngularProject\angular-link-to-DB-API\Angular-link-to-DB-API\Angular-link-to-DB-API\obj\Debug\net6.0\Angular-link-to-DB-API.genruntimeconfig.cache
 C:\Users\Chuan\Documents\GitHub\AngularProject\angular-link-to-DB-API\Angular-link-to-DB-API\Angular-link-to-DB-API\obj\Debug\net6.0\ref\Angular-link-to-DB-API.dll
+C:\Users\Chuan\Documents\GitHub\AngularProject\angular-link-to-DB-API\Angular-link-to-DB-API\Angular-link-to-DB-API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Chuan\Documents\GitHub\AngularProject\angular-link-to-DB-API\Angular-link-to-DB-API\Angular-link-to-DB-API\obj\Debug\net6.0\staticwebassets\msbuild.Angular-link-to-DB-API.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Chuan\Documents\GitHub\AngularProject\angular-link-to-DB-API\Angular-link-to-DB-API\Angular-link-to-DB-API\obj\Debug\net6.0\staticwebassets\msbuild.build.Angular-link-to-DB-API.props
+C:\Users\Chuan\Documents\GitHub\AngularProject\angular-link-to-DB-API\Angular-link-to-DB-API\Angular-link-to-DB-API\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Angular-link-to-DB-API.props
+C:\Users\Chuan\Documents\GitHub\AngularProject\angular-link-to-DB-API\Angular-link-to-DB-API\Angular-link-to-DB-API\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Angular-link-to-DB-API.props
+C:\Users\Chuan\Documents\GitHub\AngularProject\angular-link-to-DB-API\Angular-link-to-DB-API\Angular-link-to-DB-API\obj\Debug\net6.0\staticwebassets.pack.json

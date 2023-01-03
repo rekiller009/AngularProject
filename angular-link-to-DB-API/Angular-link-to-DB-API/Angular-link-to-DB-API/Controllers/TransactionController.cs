@@ -126,8 +126,6 @@ namespace Angular_link_to_DB_API.Controllers
                 }
             }
 
-            
-
             if (transactions != null)
             {
                 _logger.LogDebug($"{nameof(TransactionController)}.{nameof(GetTransaction)}: result = {transactions}");

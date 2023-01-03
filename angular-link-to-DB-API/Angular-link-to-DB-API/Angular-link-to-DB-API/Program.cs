@@ -1,6 +1,8 @@
 using Angular_link_to_DB_API.Data;
 using Angular_link_to_DB_API.Db;
 using Angular_link_to_DB_API.Helpers;
+using Angular_link_to_DB_API.OptionSetup;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -26,6 +28,8 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
+builder.Services.ConfigureOptions<OptionSetup>();
+builder.Services.ConfigureOptions<BearerOptionSetup>();
 //builder.Services.AddDbContext<DbContent>(options =>
 //    options.UseSqlServer(builder.Configuration.GetConnectionString("LinkToDbConnectionString")));
 
@@ -44,6 +48,8 @@ app.UseHttpsRedirection();
 app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
 app.UseAuthorization();
+
+app.UseAuthentication();
 
 app.MapControllers();
 

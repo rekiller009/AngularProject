@@ -2,15 +2,16 @@
 {
     public class User
     {
-        public Guid UserId { get; set; }
-        public string LoginId { get; set; }
-        public string UserName { get; set; }
-        public DateTime LastActivityDate { get; set; }
-        public Guid CreatedBy { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public Guid UpdateBy { get; set; }
-        public DateTime UpdatedDate { get; set; }
-        public Guid DeletedBy { get; set; }
-        public DateTime DeletedDate { get; set; }
+        public static Guid UserId { get; set; }
+        public static string LoginId { get; set; }
+        public static string UserName { get; set; }
+        public static string Email { get; set; }
+        public static DateTime LastActivityDate { get; set; }
+        public static Guid CreatedBy { get; set; }
+        public static DateTime CreatedDate { get; set; }
+        public static Guid UpdateBy { get; set; }
+        public static DateTime UpdatedDate { get; set; }
+        public static Guid DeletedBy { get; set; }
+        public static DateTime DeletedDate { get; set; }
     }
 }

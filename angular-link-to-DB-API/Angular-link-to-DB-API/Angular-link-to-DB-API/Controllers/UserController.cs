@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using static Angular_link_to_DB_API.Common.Constants;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Angular_link_to_DB_API.Controllers
 {
@@ -35,6 +36,7 @@ namespace Angular_link_to_DB_API.Controllers
             //_dbContent = dbContent;
         }
 
+        [Authorize]
         [Route("GetUsers")]
         [HttpGet]
         public async Task<IActionResult> GetUsers()
@@ -55,6 +57,7 @@ namespace Angular_link_to_DB_API.Controllers
             }
         }
 
+        [Authorize]
         [Route("GetUserById")]
         [HttpGet]
         public async Task<IActionResult> GetUserById(Guid id)
@@ -75,6 +78,7 @@ namespace Angular_link_to_DB_API.Controllers
             }
         }
 
+        [Authorize]
         [Route("AddUser")]
         [HttpPost]
         public async Task<IActionResult> AddUser([FromBody] AddUserRequest request)
@@ -109,6 +113,7 @@ namespace Angular_link_to_DB_API.Controllers
             }
         }
 
+        [Authorize]
         [Route("EditUser")]
         [HttpPut]
         public async Task<IActionResult> EditUser([FromBody] EditUserRequest request)
@@ -143,6 +148,7 @@ namespace Angular_link_to_DB_API.Controllers
             }
         }
 
+        [Authorize]
         [Route("DeleteUser")]
         [HttpPut]
         public async Task<IActionResult> DeleteUser([FromBody] DeleteUserRequest request)
@@ -186,6 +192,7 @@ namespace Angular_link_to_DB_API.Controllers
         //    }
         //}
 
+        [Authorize]
         [Route("GetTransactions")]
         [HttpGet]
         public async Task<IActionResult> GetTransaction()

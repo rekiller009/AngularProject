@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FutsQtdyy+qvad8kit3v1WWlaBhkG3uytSfegeDXtZf7UwTKskUHrW7VXCS8TwGGldGmpCbmCGBHtTeKlyxdUA==",
+  "dgSpecHash": "YP9qVaUCttTqRyOEF3wBAsSFmh3yTPcNQwk8r1aD28rOLlC6ZOfD6mwmQMjqhjxGopIj+0ypRqkV4tjV9wiaTg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Chuan\\Documents\\GitHub\\AngularProject\\angular-link-to-DB-API\\Angular-link-to-DB-API\\Angular-link-to-DB-API\\Angular-link-to-DB-API.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\Chuan\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Chuan\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\Chuan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Chuan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.12\\microsoft.aspnetcore.authentication.jwtbearer.6.0.12.nupkg.sha512",
     "C:\\Users\\Chuan\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Chuan\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Chuan\\.nuget\\packages\\microsoft.data.sqlclient\\5.0.0\\microsoft.data.sqlclient.5.0.0.nupkg.sha512",
