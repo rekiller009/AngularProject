@@ -3,6 +3,8 @@ using Angular_link_to_DB_API.Db;
 using Angular_link_to_DB_API.Helpers;
 using Angular_link_to_DB_API.OptionSetup;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -33,6 +35,22 @@ builder.Services.ConfigureOptions<BearerOptionSetup>();
 //builder.Services.AddDbContext<DbContent>(options =>
 //    options.UseSqlServer(builder.Configuration.GetConnectionString("LinkToDbConnectionString")));
 
+
+// Add Authorizaation
+builder.Services.AddAuthorization(options =>
+{
+    options.FallbackPolicy = new AuthorizationPolicyBuilder()
+        .RequireAuthenticatedUser()
+        .Build();
+});
+
+builder.Services.AddControllers(config =>
+{
+    var policy = new AuthorizationPolicyBuilder()
+                    .RequireAuthenticatedUser()
+                    .Build();
+    config.Filters.Add(new AuthorizeFilter(policy));
+});
 
 var app = builder.Build();
 

@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace Angular_link_to_DB_API.Controllers
 {
     [ApiController]
+    [AllowAnonymous]
     [Route("api/[controller]")]
     public class UserController : Controller
     {

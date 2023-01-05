@@ -13,5 +13,14 @@
         public static DateTime UpdatedDate { get; set; }
         public static Guid DeletedBy { get; set; }
         public static DateTime DeletedDate { get; set; }
+
+        public ContractStatus Status { get; set; }
+    }
+
+    public enum ContractStatus
+    {
+        Submitted,
+        Approved,
+        Rejected
     }
 }
